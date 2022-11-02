@@ -15,9 +15,9 @@ export const AboutUsIntl = [
     ch: "公司子公司",
   },
   {
-    en: "Board of Directors and Management",
-    id: "Dewan Direksi dan Manajemen",
-    ch: "董事会和管理层",
+    en: "Leadership",
+    id: "Kepemimpinan",
+    ch: "领导",
   },
   {
     en: "Organizational Structure",
