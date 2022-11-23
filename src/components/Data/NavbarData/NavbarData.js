@@ -33,10 +33,11 @@ export const BusinessOne = [
     ch: "镍铁冶炼",
   },
   {
-    en: "Resources and Reserves",
-    id: "Sumber Daya dan Cadangan",
-    ch: "资源储备",
+    en: "Battery",
+    id: "Batre",
+    ch: "镍铁冶炼",
   },
+  
 ];
 
 export const BusinessTwo = [
@@ -54,6 +55,11 @@ export const BusinessTwo = [
     en: "Port Operations",
     id: "Operasi Pelabuhan",
     ch: "港口运营",
+  },
+  {
+    en: "Resources and Reserves",
+    id: "Sumber Daya dan Cadangan",
+    ch: "资源储备",
   },
 ];
 

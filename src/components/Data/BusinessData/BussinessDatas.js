@@ -46,6 +46,12 @@ export const BusinessSideBarIntl = [
     to: "page2",
   },
   {
+    en: "Raw Battery Materials",
+    id: "Bahan Baku Batre",
+    ch: "Raw Battery Materials",
+    to: "page2",
+  },
+  {
     en: "Direct Shipping Ore",
     id: "Pengiriman Bijih Langsung",
     ch: "矿石出口",

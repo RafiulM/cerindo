@@ -35,11 +35,13 @@ import Reports from "./pages/Reports";
 import NotFoundPage from "./pages/404Page";
 import Award from "./pages/Award";
 import Gallery from "./pages/Gallery";
+import RawBattery from "./pages/RawBattery";
 import ActivityContentComponent from "./components/NewsGalleryComponents/ActivityComponents/ActivityContentComponents";
 import ContactComponents from "./components/ContactComponents/index";
 import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
 import { langContext } from "./langContext";
 import Privacy from "./components/PrivacyComponents/Privacy";
+import RawBatteries from "./components/BusinessComponents/RawBatteries";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -112,6 +114,7 @@ function App() {
                 <Route path="/Jobs/:job/:jobs" component={JobComponents} exact />
                 <Route path="/Contact-Us" component={ContactComponents} exact />
                 <Route path="/Privacy" component={Privacy} exact />
+                <Route path="/Battery" component={RawBattery} exact />
                 <Route component={NotFoundPage} />
               </Switch>
             </CSSTransition>
