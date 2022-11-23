@@ -96,8 +96,11 @@ const Sidebar = ({ isOpen, toggle }) => {
               <SidebarLink to="/Ferronickel-Smelting" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 2, val2)}
               </SidebarLink>
-              <SidebarLink to="/Resource-Reserve" onClick={toggle}>
+              <SidebarLink to="/Battery" onClick={toggle}>
               {SideBarDropDown(BusinessOne, 3, val2)}
+              </SidebarLink>
+              <SidebarLink to="/Resource-Reserve" onClick={toggle}>
+              {SideBarDropDown(BusinessTwo, 3, val2)}
               </SidebarLink>
               <SidebarLink to="/Ore-Export" onClick={toggle}>
               {SideBarDropDown(BusinessTwo, 0, val2)}
