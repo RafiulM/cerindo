@@ -42,6 +42,8 @@ import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseCo
 import { langContext } from "./langContext";
 import Privacy from "./components/PrivacyComponents/Privacy";
 import RawBatteries from "./components/BusinessComponents/RawBatteries";
+import DummyComponent from "./components/BusinessComponents/DummyPage";
+import Dummy from "./pages/Dummy";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -115,6 +117,7 @@ function App() {
                 <Route path="/Contact-Us" component={ContactComponents} exact />
                 <Route path="/Privacy" component={Privacy} exact />
                 <Route path="/Battery" component={RawBattery} exact />
+                <Route path="/Dummy" component={Dummy} exact />
                 <Route component={NotFoundPage} />
               </Switch>
             </CSSTransition>
