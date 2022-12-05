@@ -88,6 +88,12 @@ export const BusinessWrited = styled.div`
     vertical-align: bottom;
     margin-top:${(props) => (props.title ? "8px" : "30px")};
     text-align: ${(props) => (props.title ? "left" : "justify")};
+    & img{
+      width:100%;
+    }
+    & ul{
+      padding:10px 25px;
+    }
     @media screen and (max-width: 810px) {
         text-align: ${(props) => (props.title ? "center" : "justify")};
     }
