@@ -140,6 +140,35 @@ export const NavLinks = styled(LinkR)`
     display: flex;
   }
 `;
+export const ANavLinks = styled.a`
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  font-size: 14px;
+  line-height: 17px;
+  transition: 0.3s linear;
+  border-bottom: 3px solid transparent;
+  color: ${({ bottom }) => (bottom ? "#efb401" : "none")};
+
+  &.active {
+    border-bottom: 3px solid #efb401;
+  }
+
+  &:hover {
+    color: #efb401;
+    border-bottom: 3px solid #efb401;
+  }
+
+  &:hover ${NavbarDropdownContent} {
+    display: flex;
+  }
+`;
 
 export const NavText = styled.h1`
   font-family: "Montserrat-black";

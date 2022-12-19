@@ -43,6 +43,7 @@ import {
   Nulity,
   SearchTermed,
   SearchedLinked,
+  ANavLinks,
 } from "./NavbarElements";
 
 import getFlagUrl from "./getFlagURL";
@@ -237,7 +238,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/Career">{NavbarLang(Career, language)}</NavLinks>
+              <ANavLinks href="https://job.cerindocorp.id" >{NavbarLang(Career, language)}</ANavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>

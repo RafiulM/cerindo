@@ -32,6 +32,7 @@ import {
     DropDown,
     Dropbtn,
     DropDownContent,
+    ASidebarLink,
 } from "./SideBarElements";
 
 import { langContext } from "../../langContext";
@@ -172,11 +173,11 @@ const Sidebar = ({ isOpen, toggle }) => {
             </SidebarLink>
             </DropDownContent>
           </DropDown>
-          <SidebarLink to="/Career" onClick={toggle}>
+          <ASidebarLink href="https://job.cerindocorp.id/" onClick={toggle}>
           <SideBtnWrap>
           {SideBarLang(Career, val2)}
             </SideBtnWrap>
-          </SidebarLink>
+          </ASidebarLink>
         </SidebarMenu>
         {/* 
           <SidebarRoute to="/register" onClick={toggle}>
