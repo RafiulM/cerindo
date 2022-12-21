@@ -28,7 +28,7 @@ import gfm from "remark-gfm";
 
 const AwardComponents = () => {
   const { language } = useContext(langContext);
-  const [AwardContent, setAwardContent] = useState([]);
+  const [awardContent, setAwardContent] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await sustainService.getListSustain();
@@ -38,26 +38,40 @@ const AwardComponents = () => {
     fetchData();
   }, []);
 
-  if (AwardContent.length === 0) return null;
+  const awardsList = [].concat(awardContent.awards_list)
+
+
+
+// console.log(awards_list)
+
+  const sortedAwards = awardsList.sort((a, b) => {
+    var c = new Date(a.date);
+    var d = new Date(b.date);
+    return d - c;
+  });
+  
+  console.log("sorted array", sortedAwards);
+
+  if (awardContent.length === 0) return null;
   return (
     <>
       <Aboutstyle>
         <BusinessSideBarComponents page4={true} />
         <AboutMain>
           <BusinessWrited title>
-            {AwardContentLangTitle(AwardContent, language)}
+            {AwardContentLangTitle(awardContent, language)}
           </BusinessWrited>
           <BusinessWrited>
             <ReactMarkdown
               children={
-                AwardContentLangBody(AwardContent, language).props.children
+                AwardContentLangBody(awardContent, language).props.children
               }
               plugins={[[gfm, { singleTilde: false }]]}
               allowDangerousHtml={true}
             />
           </BusinessWrited>
           <AwardsesContent>
-            {AwardContent.awards_list.map((data, idx) => {
+            {sortedAwards.map((data, idx) => {
               return (
                 <ContentAward key={idx}>
                   <BoxContainer>{data.date}</BoxContainer>
