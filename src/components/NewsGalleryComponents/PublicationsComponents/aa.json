@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "63b3d1b51122fa0f51fec905",
+    "title_en": "Kaleidoskop 2021",
+    "title_id": "Kaleidoskop 2021",
+    "title_cn": "Kaledoskop 2021",
+    "date": "2022-01-01",
+    "published_at": "2023-01-03T07:11:16.071Z",
+    "createdAt": "2023-01-03T06:56:53.439Z",
+    "updatedAt": "2023-01-09T08:33:15.765Z",
+    "__v": 0,
+    "file": {
+      "_id": "63b3d18d1122fa0f51fec904",
+      "name": "Kaleidoskop 170122.pdf",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "Kaleidoskop_170122_c0c982ba4c",
+      "ext": ".pdf",
+      "mime": "application/pdf",
+      "size": 54007.68,
+      "url": "https://cerindo.s3.ap-southeast-1.amazonaws.com/Kaleidoskop_170122_c0c982ba4c.pdf",
+      "provider": "aws-s3",
+      "width": null,
+      "height": null,
+      "related": ["63b3d1b51122fa0f51fec905"],
+      "createdAt": "2023-01-03T06:56:13.506Z",
+      "updatedAt": "2023-01-03T06:56:53.452Z",
+      "__v": 0,
+      "id": "63b3d18d1122fa0f51fec904"
+    },
+    "thumbnail": "63bbbff58f3a5f90103d0185",
+    "title_ch": "Kaleidoskop 2021",
+    "id": "63b3d1b51122fa0f51fec905"
+  }
+]

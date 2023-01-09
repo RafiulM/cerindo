@@ -40,6 +40,7 @@ import ContactComponents from "./components/ContactComponents/index";
 import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseComponents/Announcement";
 import { langContext } from "./langContext";
 import Privacy from "./components/PrivacyComponents/Privacy";
+import Publications from "./pages/Publications";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -103,6 +104,7 @@ function App() {
                 <Route path="/Reports" component={Reports} exact />
                 <Route path="/Awards" component={Award} exact />
                 <Route path="/Gallery" component={Gallery} exact />
+                <Route path="/Publications" component={Publications} exact />
                 <Route
                   path="/Community-Activity/:id"
                   component={ActivityContentComponent}
