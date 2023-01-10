@@ -24,26 +24,32 @@ const PublicationsComponents = () => {
     }, []);
     return (
         <Aboutstyle>
-            <NewsGallerySidebarComponents page3={true} />
+            <NewsGallerySidebarComponents page4 />
             <AboutMain>
                 <h2>Publications</h2>
                 <PublicationsList>
-                    {publications.map((data, idx) => (
-                        <PublicationLink>
-                            <PublicationCard key={idx}>
+                    {publications.map((data) => (
+                        <a
+                            key={data.id}
+                            href={`${data.file.url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none", }}
+                        >
+                            <PublicationCard>
                                 <PublicationThumbnail
-                                    src="https://cerindo.s3.ap-southeast-1.amazonaws.com/1_cover_Kaleidoskop_170122_8d4c2043f0.jpg"
+                                    src={data.thumbnail.url}
                                 />
-                                <PublicationDetails>
+                                {/* <PublicationDetails>
                                     <PublicationTitle>
                                         {data.title_en}
                                     </PublicationTitle>
                                     <PublicationDesc>
                                         {data.description_en}
                                     </PublicationDesc>
-                                </PublicationDetails>
+                                </PublicationDetails> */}
                             </PublicationCard>
-                        </PublicationLink>
+                        </a>
                     ))}
                 </PublicationsList>
             </AboutMain>

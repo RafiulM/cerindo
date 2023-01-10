@@ -66,3 +66,9 @@
   opacity: 0;
   transition: opacity 100ms linear;
 }
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  width: auto !important;
+  height: 80vh !important;
+}

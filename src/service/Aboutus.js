@@ -6,6 +6,7 @@ export const aboutUsService = {
   getVideoGallery,
   getDetailedPhotoGallery,
   getPublications,
+  getPublicationsDetail,
 };
 
 async function getListAboutUs() {
@@ -39,5 +40,11 @@ async function getVideoGallery() {
 async function getPublications() {
   const body = {}
   const response = await gatewayHelper.http("GET", "publications", body)
+  return response
+}
+
+async function getPublicationsDetail(publicationsSlug) {
+  const body = {}
+  const response = await gatewayHelper.http("GET", "publications/" + publicationsSlug, body)
   return response
 }

@@ -1,28 +1,28 @@
 import React, { useEffect, useState, useContext } from "react";
 import { aboutUsService } from "../../../../service/Aboutus";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Aboutstyle, AboutMain } from "../../../AboutUsComponents/AboutUsElements";
-import NewsGallerySidebarComponents from "../../index";
 import { langContext } from "../../../../langContext";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import { PublicationsWrapper } from "../PublicationsElements";
+import { MagContainer, PdfContainer, PublicationDetailContainer } from "../PublicationsElements";
 
 
 const PublicationsDetail = () => {
+    const { id } = useParams()
     const { language } = useContext(langContext);
-    const [publications, setPublications] = useState([]);
+    const [publicationsDetail, setPublicationsDetail] = useState([]);
 
-    const fetchPublications = async () => {
-        const response = await aboutUsService.getPublications();
+    const fetchPublicationsDetail = async () => {
+        const response = await aboutUsService.getPublicationsDetail(id);
         const data = response.data;
-        setPublications(data);
+        setPublicationsDetail(data);
     };
 
     useEffect(() => {
-        fetchPublications();
-    }, []);
+        fetchPublicationsDetail();
+    }, [id]);
 
     const [numPages, setNumPages] = useState(1);
     const [pageNumber, setPageNumber] = useState(1);
@@ -44,32 +44,41 @@ const PublicationsDetail = () => {
         changePage(+1)
     }
 
+    if (publicationsDetail.length === 0) return null;
+
     return (
         <>
             <Aboutstyle>
-                <NewsGallerySidebarComponents page3={true} />
-                <AboutMain>
-                    <PublicationsWrapper>
-                        {publications.map((data) => (
-                            <div key={data.file._id}>
-                                <Document file={data.file.url} onLoadSuccess={onDocumentLoadSuccess}>
-                                    <Page height={400} pageNumber={pageNumber} />
-                                </Document>
-                                <p>
-                                    Page {pageNumber} of {numPages}
-                                </p>
-                                {pageNumber > 1 &&
-                                    <button onClick={changePageBack}>Previous Page</button>
-                                }
-                                {
-                                    pageNumber < numPages &&
-                                    <button onClick={changePageNext}>Next Page</button>
-                                }
-                            </div>
-                        ))}
-                    </PublicationsWrapper>
+                <PublicationDetailContainer>
+                    <MagContainer>
+                        <h2>{publicationsDetail.title_en}</h2>
+                        <PdfContainer>
+                            <Document file={publicationsDetail.file.url} onLoadSuccess={onDocumentLoadSuccess}>
+                                <div style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "8px",
+                                }}>
+                                    {/* <Page pageNumber={pageNumber} /> */}
+                                    {Array.apply(null, Array(numPages))
+                                        .map((x, i) => i + 1)
+                                        .map(page => <Page pageNumber={page} />)}
+                                </div>
+                            </Document>
+                        </PdfContainer>
+                        {/* <p>
+                            Page {pageNumber} of {numPages}
+                        </p>
+                        {pageNumber > 1 &&
+                            <button onClick={changePageBack}>Previous Page</button>
+                        }
+                        {
+                            pageNumber < numPages &&
+                            <button onClick={changePageNext}>Next Page</button>
+                        } */}
+                    </MagContainer>
 
-                </AboutMain>
+                </PublicationDetailContainer>
             </Aboutstyle>
         </>
     );

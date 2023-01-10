@@ -41,6 +41,7 @@ import AnnouncementPage from "./components/CorporateNewsComponents/NewsReleaseCo
 import { langContext } from "./langContext";
 import Privacy from "./components/PrivacyComponents/Privacy";
 import Publications from "./pages/Publications";
+import PublicationsDetailPage from "./pages/PublicationsDetailPage";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -105,6 +106,7 @@ function App() {
                 <Route path="/Awards" component={Award} exact />
                 <Route path="/Gallery" component={Gallery} exact />
                 <Route path="/Publications" component={Publications} exact />
+                <Route path="/Publications/:id" component={PublicationsDetailPage} exact />
                 <Route
                   path="/Community-Activity/:id"
                   component={ActivityContentComponent}

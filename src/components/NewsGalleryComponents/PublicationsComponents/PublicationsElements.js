@@ -45,3 +45,26 @@ export const PublicationDetails = styled.p`
     flex-direction: column ;
     gap: 2px;
 `
+
+export const PublicationDetailContainer = styled.div`
+    display: flex;
+    max-width: 700px;
+    /* padding: 0 32px; */
+    margin: 0 auto;
+`
+
+export const MagContainer = styled.div`
+    display: flex;
+    flex-direction : column;
+    width : 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden ;
+    align-items: center;
+`
+
+export const PdfContainer = styled.div`
+    display: flex;
+    height: 100%;
+    width: auto;
+`
