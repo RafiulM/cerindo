@@ -6,7 +6,8 @@ import { aboutUsService } from "../../../service/Aboutus";
 import { langContext } from "../../../langContext";
 import { AboutMain, Aboutstyle } from "../../AboutUsComponents/AboutUsElements";
 import NewsGallerySidebarComponents from "..";
-import { PublicationCard, PublicationDesc, PublicationDetails, PublicationLink, PublicationsList, PublicationThumbnail, PublicationTitle } from "./PublicationsElements";
+import { PublicationCard, PublicationDesc, PublicationDetails, PublicationLink, PublicationsList, PublicationTextWrap, PublicationThumbnail, PublicationTitle } from "./PublicationsElements";
+import { PublicationsTitle } from "../NewsGalleryLang";
 
 
 const PublicationsComponents = () => {
@@ -26,7 +27,11 @@ const PublicationsComponents = () => {
         <Aboutstyle>
             <NewsGallerySidebarComponents page4 />
             <AboutMain>
-                <h2>Publications</h2>
+                <PublicationTextWrap>
+                    <h2 style={{ width: "auto" }}>
+                        {PublicationsTitle(language)}
+                    </h2>
+                </PublicationTextWrap>
                 <PublicationsList>
                     {publications.map((data) => (
                         <a

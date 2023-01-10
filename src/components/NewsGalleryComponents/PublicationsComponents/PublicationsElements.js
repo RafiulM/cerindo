@@ -2,19 +2,30 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 
-export const PublicationLink = styled(Link)`
-    text-decoration: none;
-    color: #000000;
+export const PublicationTextWrap = styled.div`
+    display: flex;
+    @media screen and (max-width: 720px) {
+        justify-content: center;
+        }
 `
 
 export const PublicationsList = styled.div`
     display: flex;
-    margin-top: 24px;
+    width: 100%;
+    align-items: center;
+    margin: 24px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @media screen and (max-width: 720px) {
+        justify-content: center;
+        }
 `;
 
 export const PublicationThumbnail = styled.img`
     height : 420px;
     width : auto;
+    object-fit: cover;
     border-radius: 16px;
     transition: all 300ms;
 
@@ -22,7 +33,9 @@ export const PublicationThumbnail = styled.img`
 export const PublicationCard = styled.div`
     display : flex ;
     width: auto;
+    max-width: 300px;
     flex-direction: column ;
+    /* margin: 32px 0; */
     gap: 16px;
     &:hover ${PublicationThumbnail} {
         transform: scale(1.02);

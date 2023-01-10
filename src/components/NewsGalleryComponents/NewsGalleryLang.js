@@ -15,6 +15,21 @@ export const NewsGalleryTitle = (lang) => {
   return text;
 };
 
+export const PublicationsTitle = (lang) => {
+  var text =
+    lang === "en" ? (
+      <>Publications</>
+    ) : lang === "id" ? (
+      <>Publikasi</>
+    ) : lang === "cn" ? (
+      <>Publications</>
+    ) : (
+      <> </>
+    );
+
+  return text;
+};
+
 export const NewsGallerySidebar = (data, lang, index) => {
   var text =
     lang === "en" ? (
