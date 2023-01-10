@@ -44,4 +44,9 @@ export const AboutUsIntl = [
     id: "Galeri",
     ch: "画廊",
   },
+  {
+    en: "Publications",
+    id: "Publikasi",
+    ch: "Publications",
+  },
 ];

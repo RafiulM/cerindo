@@ -230,9 +230,9 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Gallery">
                       {NavbarDropDown(NewsGalleryDropdown, 2, language)}
                     </NavDropLinks>
-                    {/* <NavDropLinks to="/Publication">
+                    <NavDropLinks to="/Publications">
                       {NavbarDropDown(NewsGalleryDropdown, 3, language)}
-                    </NavDropLinks> */}
+                    </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>
               </NavLinks>

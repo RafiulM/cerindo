@@ -15,8 +15,8 @@ export const NewsGallerySideBarIntl = [
     ch: "画廊",
   },
   {
-    en: "Publication",
+    en: "Publications",
     id: "Publikasi",
-    ch: "Publication",
+    ch: "Publications",
   },
 ];

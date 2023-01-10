@@ -98,6 +98,8 @@ const AlbumComponent = (props) => {
   const carouseright = () => {
     setCurrent(current === 0 ? lengths - 1 : current - 1);
   };
+
+  console.log(photoDetailedGallery)
   return (
     <>
       <GlobalContent>
