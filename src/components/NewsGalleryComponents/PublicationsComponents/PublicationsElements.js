@@ -15,7 +15,7 @@ export const PublicationsList = styled.div`
     align-items: center;
     margin: 24px 0;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 24px;
 
     @media screen and (max-width: 720px) {
         justify-content: center;
@@ -23,7 +23,7 @@ export const PublicationsList = styled.div`
 `;
 
 export const PublicationThumbnail = styled.img`
-    height : 420px;
+    height : 320px;
     width : auto;
     object-fit: cover;
     border-radius: 16px;
@@ -33,7 +33,7 @@ export const PublicationThumbnail = styled.img`
 export const PublicationCard = styled.div`
     display : flex ;
     width: auto;
-    max-width: 300px;
+    max-width: 227px;
     flex-direction: column ;
     /* margin: 32px 0; */
     gap: 16px;
