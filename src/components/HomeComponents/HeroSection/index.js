@@ -9,7 +9,7 @@ import { homeService } from "../../../service/Homepage";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
 import { HeroData } from "../../Data/HomeData";
-import {FlexContainer} from "../HomeElements"
+import { FlexContainer } from "../HomeElements"
 import {
   HeroContainer,
   HeroContent,
@@ -35,14 +35,18 @@ import {
 } from "./HeroElements";
 import { langContext } from "../../../langContext";
 import { NewsLangTitle, NewsLangBanner } from "./HeroLang";
+import { aboutUsService } from "../../../service/Aboutus";
 const AutoplaySlider = withAutoplay(Slider);
 
 const HeroSection = () => {
   const { language } = useContext(langContext);
   const [newsData, setNewsData] = useState([]);
   const [communityData, setCommunityData] = useState([]);
+  const [galleryData, setGalleryData] = useState([]);
   const [homeData, setHomeData] = useState([]);
   const [type, setType] = useState("news");
+  const [newGalleryData, setNewGalleryData] = useState([]);
+  const [combinedData, setCombinedData] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -62,12 +66,42 @@ const HeroSection = () => {
       const data = response.data;
       setCommunityData(data);
     };
+    const fetchGallery = async () => {
+      const response = await aboutUsService.getPhotoGallery();
+      const data = response.data;
+      setGalleryData(data);
+    };
+    fetchGallery();
     fetchNews();
     fetchCommunity();
     fetchHome();
   }, []);
-  const joinedData = newsData.concat(communityData);
-  console.log("join =====>", joinedData);
+
+  const newData = galleryData.map((item) => {
+    const { title_ch, title_id, title_en, createdAt, image, url } = item;
+    const date = new Date(createdAt).toISOString().slice(0, 10);
+    return {
+      title_ch,
+      title_id,
+      title_en,
+      date,
+      image: image[0],
+      url
+    };
+  });
+  const sortedData = newData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const mostRecentData = sortedData[0];
+  const newCombinedData = [mostRecentData, ...newsData];
+
+  const sortedCombinedData = newCombinedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const mostRecentCombinedData = sortedCombinedData.slice(0, 3);
+  // setCombinedData(mostRecentCombinedData);
+
+
+  // console.log(mostRecentCombinedData)
+
+
+  const joinedData = mostRecentCombinedData
 
   function compareDate(a, b) {
     var c = new Date(a.date);
@@ -79,6 +113,7 @@ const HeroSection = () => {
     }
     return 0;
   }
+
   if (homeData.length === 0) return null;
 
   const sortedContent = joinedData.sort(compareDate);
