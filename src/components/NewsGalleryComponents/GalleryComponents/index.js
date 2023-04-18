@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Aboutstyle, AboutMain } from "../../AboutUsComponents/AboutUsElements";
 import NewsGallerySidebarComponents from "../index";
 import { GalleryTitle } from "../../Data/AboutusData/GalleryDatas";
-import {BsArrowRight} from "react-icons/bs"
+import { BsArrowRight } from "react-icons/bs"
 import {
   GalleryAllContent,
   VideoGridOther,
@@ -30,6 +30,7 @@ const GalleryComponents = () => {
   const { language } = useContext(langContext);
   const [videoGallery, setVideoGallery] = useState([]);
   const [photoGallery, setPhotoGallery] = useState([]);
+  const [hover, setHover] = useState(null);
   const fetchVideo = async () => {
     const response = await aboutUsService.getVideoGallery();
     const data = response.data;
@@ -60,8 +61,6 @@ const GalleryComponents = () => {
 
   if (sortedVideo.length === 0) return null;
   if (sortedPhoto.length === 0) return null;
-  console.log(videoGallery[0]);
-  console.log(sortedPhoto[0]);
 
   return (
     <>
@@ -72,8 +71,11 @@ const GalleryComponents = () => {
             <h2>{GalleryLangParans(GalleryTitle.profile, language)}</h2>
             <VideoContentPartMain>
               <VideoContentMain
-                controls
-                src={GalleryLangVideo(videoGallery[videoGallery.length-1], language).props.children}
+                onMouseEnter={(e) => setHover([videoGallery.length - 1]._id)}
+                onMouseLeave={(e) => setHover(null)}
+                controls={hover === [videoGallery.length - 1]._id}
+                src={GalleryLangVideo(videoGallery[videoGallery.length - 1], language).props.children}
+                poster={videoGallery[videoGallery.length - 1]?.video_thumbnail?.url}
               />
             </VideoContentPartMain>
             <h2>{GalleryLangParans(GalleryTitle.other, language)}</h2>
@@ -82,9 +84,12 @@ const GalleryComponents = () => {
                 return (
                   <VideoContainerOther>
                     <VideoContentOther
-                      controls
+                      onMouseEnter={(e) => setHover(data._id)}
+                      onMouseLeave={(e) => setHover(null)}
+                      controls={hover === data._id}
                       src={GalleryLangVideo(data, language).props.children}
                       key={idx}
+                      poster={data?.video_thumbnail?.url}
                     />
                     <p>{GalleryLangVideoTitle(data, language)}</p>
                   </VideoContainerOther>
@@ -108,7 +113,7 @@ const GalleryComponents = () => {
                           {GalleryLangTitle(data, language)}
                         </figcaption>
                         <ViewAlbum>View Album
-                          <ArrowIcon><BsArrowRight/>
+                          <ArrowIcon><BsArrowRight />
                           </ArrowIcon>
                         </ViewAlbum>
                       </CardContent>
