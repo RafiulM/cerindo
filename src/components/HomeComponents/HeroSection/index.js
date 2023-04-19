@@ -159,12 +159,12 @@ const HeroSection = () => {
                     <>
                       {idx > 1 ? (
                         <HeroNewsContent
-                          to={`/News/${data._id}`}
+                          to={`/News/${data?._id}`}
                           key={idx}
                           lastIndex
                         >
                           <ImgWrap>
-                            <Img src={data.image.url} />
+                            <Img src={data?.image.url} />
                           </ImgWrap>
                           <HeroNewsDesc>
                             <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
@@ -173,12 +173,12 @@ const HeroSection = () => {
                           <ReadMore>Read More</ReadMore>
                         </HeroNewsContent>
                       ) : (
-                        <HeroNewsContent to={`/News/${data._id}`} key={idx}>
+                        <HeroNewsContent to={`/News/${data?._id}`} key={idx}>
                           <ImgWrap>
-                            <Img src={data.image.url} />
+                            <Img src={data?.image.url} />
                           </ImgWrap>
                           <HeroNewsDesc>
-                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsTimeP>{data?.date}</HeroNewsTimeP>
                             <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           </HeroNewsDesc>
                           <ReadMore>Read More</ReadMore>
@@ -191,29 +191,29 @@ const HeroSection = () => {
                     <>
                       {idx > 1 ? (
                         <HeroNewsContent
-                          to={`/Community-Activity/${data._id}`}
+                          to={`/Community-Activity/${data?._id}`}
                           key={idx}
                           lastIndex
                         >
                           <ImgWrap>
-                            <Img src={data.image.url} />
+                            <Img src={data?.image.url} />
                           </ImgWrap>
                           <HeroNewsDesc>
-                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsTimeP>{data?.date}</HeroNewsTimeP>
                             <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           </HeroNewsDesc>
                           <ReadMore>Read More</ReadMore>
                         </HeroNewsContent>
                       ) : (
                         <HeroNewsContent
-                          to={`/Community-Activity/${data._id}`}
+                          to={`/Community-Activity/${data?._id}`}
                           key={idx}
                         >
                           <ImgWrap>
-                            <Img src={data.image.url} />
+                            <Img src={data?.image.url} />
                           </ImgWrap>
                           <HeroNewsDesc>
-                            <HeroNewsTimeP>{data.date}</HeroNewsTimeP>
+                            <HeroNewsTimeP>{data?.date}</HeroNewsTimeP>
                             <HeroNewsP>{NewsLangTitle(data, language)}</HeroNewsP>
                           </HeroNewsDesc>
                           <ReadMore>Read More</ReadMore>
