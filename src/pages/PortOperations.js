@@ -15,7 +15,7 @@ const PortOperations = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("618a31404161220b3a25edcd");
       const data = response.data;
       setBusinessList(data);
     };
@@ -31,7 +31,7 @@ const PortOperations = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[6].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner 
         img={data.url} 
         texted={true} 

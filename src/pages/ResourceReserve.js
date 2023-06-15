@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { businessService } from "../service/Business";
-import { ResourceReserveHead } from "../components/Data/BusinessData/ResourceReserveDatas";
 import Banner from "../components/Banner";
 import ResourceReserveComponents from "../components/BusinessComponents/ResourceReserveComponents";
 import {BannerSlider} from "../components/BannerSlider";
@@ -15,7 +14,7 @@ const ResourceReserve = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("5ff43dbbb9e34a0df87694ad");
       const data = response.data;
       setBusinessList(data);
     };
@@ -31,7 +30,7 @@ const ResourceReserve = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[2].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner 
         img={data.url} 
         texted={true} 

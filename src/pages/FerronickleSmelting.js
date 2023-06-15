@@ -16,7 +16,7 @@ const FerronickleSmelting = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("5ff43b56b545d223a4997ccd");
       const data = response.data;
       setBusinessList(data);
     };
@@ -32,7 +32,7 @@ const FerronickleSmelting = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[1].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner img={data.url} texted={true} key={idx} place={BusinessTitle(language)}/></>)
       })}</AutoplaySlider>
       <FerronickleSmeltingComponents />

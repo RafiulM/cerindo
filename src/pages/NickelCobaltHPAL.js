@@ -15,7 +15,7 @@ const NickleCobaltHPAL = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("5ff43e06b9e34a0df87694ae");
       const data = response.data;
       setBusinessList(data);
     };
@@ -31,7 +31,7 @@ const NickleCobaltHPAL = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[3].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner img={data.url} texted={true} key={idx} place={BusinessTitle(language)}/></>)
       })}</AutoplaySlider>
       <NickelCobaltHPALComponents />
