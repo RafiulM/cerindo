@@ -16,7 +16,7 @@ const NickleOreMining = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("5ff4395df736711508e898f1");
       const data = response.data;
       setBusinessList(data);
     };
@@ -32,7 +32,7 @@ const NickleOreMining = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[0].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner img={data.url} texted={true} key={idx} place={BusinessTitle(language)}/></>)
       })}</AutoplaySlider>
       <NickleOreComponents />

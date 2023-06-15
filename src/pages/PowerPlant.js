@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { businessService } from "../service/Business";
-import { PowerPlantHead } from "../components/Data/BusinessData/PowerPlantDatas";
 import Banner from "../components/Banner";
 import PowerPlantComponents from "../components/BusinessComponents/PowerPlantComponents";
 import {BannerSlider} from "../components/BannerSlider";
@@ -15,7 +14,7 @@ const PowerPlant = () => {
   const [businessList, setBusinessList] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await businessService.getListBusiness();
+      const response = await businessService.getDetailBusiness("618381e74161220b3a25ea81");
       const data = response.data;
       setBusinessList(data);
     };
@@ -31,7 +30,7 @@ const PowerPlant = () => {
     interval={10000}
     className="aws-btn"
     >
-      {businessList[5].banner.map((data, idx) => {
+      {businessList.banner.map((data, idx) => {
         return (<><Banner 
         img={data.url} 
         texted={true} 
