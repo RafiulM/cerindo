@@ -39,6 +39,9 @@ function Privacy() {
                   </li>
                 </ol>
               </li>
+              <li>
+              Ceria menyimpan data foto wajah pengguna fitur Attendance dalam jangka waktu 3 bulan. Data tersebut digunakan untuk proses verifikasi kehadiran karyawan oleh departemen Human Capital dari PT Ceria Nugraha Indotama. Ceria tidak pernah memberikan akses atau menyerahkan data wajah pengguna aplikasi Ceria Mobile ke pihak manapun selain PT Ceria Nugraha Indotama.
+              </li>
               <li>  Ceria menjamin tidak ada penjualan, pengalihan, distribusi atau meminjamkan informasi/data pribadi costumer kepada pihak ketiga lain, tanpa terdapat izin dari Customer. Kecuali apabila Ceria berkewajiban mengungkapkan dan/atau berbagi data pribadi pengguna dalam upaya mematuhi kewajiban hukum yang berlaku.
               </li>
             </ol>
