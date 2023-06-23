@@ -38,8 +38,6 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                         <TextButton page={page5}>{AboutUsSidebar(AboutUsIntl, language, 4)}</TextButton>
                         <TextButton page={page6}>{AboutUsSidebar(AboutUsIntl, language, 5)}</TextButton>
                         <TextButton page={page7}>{AboutUsSidebar(AboutUsIntl, language, 6)}</TextButton>
-                        <TextButton page={page8}>{AboutUsSidebar(AboutUsIntl, language, 7)}</TextButton>
-                        <TextButton page={page9}>{AboutUsSidebar(AboutUsIntl, language, 8)}</TextButton>
 
                         <ArrowDiv>
                             {selected ? <ArrowDownLang style={{transform: "rotate(225deg)"}}/> : <ArrowDownLang/>}
@@ -56,17 +54,11 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                         <AboutSideBarContent page={page3} to="/Subsidiary">
                             {AboutUsSidebar(AboutUsIntl, language, 2)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page4} to="/Board-of-Director">
+                        <AboutSideBarContent page={page6} to="/History-Milestone">
                             {AboutUsSidebar(AboutUsIntl, language, 3)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page5} to="/Organization-Structure">
-                            {AboutUsSidebar(AboutUsIntl, language, 4)}
-                        </AboutSideBarContent>
-                        <AboutSideBarContent page={page6} to="/History-Milestone">
-                            {AboutUsSidebar(AboutUsIntl, language, 5)}
-                        </AboutSideBarContent>
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
-                            {AboutUsSidebar(AboutUsIntl, language, 6)}
+                            {AboutUsSidebar(AboutUsIntl, language, 4)}
                         </AboutSideBarContent>
                     </Contentt>
                     : 
@@ -81,17 +73,11 @@ const AboutSideBarComponents = ({page1,page2,page3,page4,page5,page6,page7,page8
                         <AboutSideBarContent page={page3} to="/Subsidiary">
                             {AboutUsSidebar(AboutUsIntl, language, 2)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page4} to="/Board-of-Director">
+                        <AboutSideBarContent page={page6} to="/History-Milestone">
                             {AboutUsSidebar(AboutUsIntl, language, 3)}
                         </AboutSideBarContent>
-                        <AboutSideBarContent page={page5} to="/Organization-Structure">
-                            {AboutUsSidebar(AboutUsIntl, language, 4)}
-                        </AboutSideBarContent>
-                        <AboutSideBarContent page={page6} to="/History-Milestone">
-                            {AboutUsSidebar(AboutUsIntl, language, 5)}
-                        </AboutSideBarContent>
                         <AboutSideBarContent page={page7} to="/Licenses-Concession">
-                            {AboutUsSidebar(AboutUsIntl, language, 6)}
+                            {AboutUsSidebar(AboutUsIntl, language, 4)}
                         </AboutSideBarContent>
                     </Contentt>
                     </Changed>

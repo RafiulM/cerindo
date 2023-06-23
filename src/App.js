@@ -24,8 +24,6 @@ import JobComponents from "./components/CareerComponents/JobComponents";
 import Vismis from "./pages/Vismis";
 import Commitment from "./pages/Commitment";
 import Subsidiary from "./pages/Subsidiary";
-import BOD from "./pages/BOD";
-import Organization from "./pages/Organization";
 import History from "./pages/History";
 import License from "./pages/LicensePages";
 import Career from "./pages/Career";
@@ -91,12 +89,6 @@ function App() {
                 <Route path="/Mission-Vision" component={Vismis} exact />
                 <Route path="/Commitment" component={Commitment} exact />
                 <Route path="/Subsidiary" component={Subsidiary} exact />
-                <Route path="/Board-of-Director" component={BOD} exact />
-                <Route
-                  path="/Organization-Structure"
-                  component={Organization}
-                  exact
-                />
                 <Route path="/History-Milestone" component={History} exact />
                 <Route path="/Licenses-Concession" component={License} exact />
                 <Route path="/Career" component={Career} exact />
