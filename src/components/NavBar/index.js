@@ -198,19 +198,13 @@ const Navbar = ({ toggle }) => {
                     <NavDropLinks to="/Subsidiary">
                       {NavbarDropDown(AboutUsDropdown, 2, language)}
                     </NavDropLinks>
-                    <NavDropLinks to="/Board-of-Director">
-                      {NavbarDropDown(AboutUsDropdown, 3, language)}
-                    </NavDropLinks>
-                    <NavDropLinks to="/Organization-Structure">
-                      {NavbarDropDown(AboutUsDropdown, 4, language)}
-                    </NavDropLinks>
                   </DropDiv>
                   <DropDiv>
                     <NavDropLinks to="/History-Milestone">
-                      {NavbarDropDown(AboutUsDropdown, 5, language)}
+                      {NavbarDropDown(AboutUsDropdown, 3, language)}
                     </NavDropLinks>
                     <NavDropLinks to="/Licenses-Concession">
-                      {NavbarDropDown(AboutUsDropdown, 6, language)}
+                      {NavbarDropDown(AboutUsDropdown, 4, language)}
                     </NavDropLinks>
                   </DropDiv>
                 </NavbarDropdownContent>

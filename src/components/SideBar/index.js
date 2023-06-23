@@ -143,17 +143,11 @@ const Sidebar = ({ isOpen, toggle }) => {
               <SidebarLink to="/Subsidiary" onClick={toggle}>
                 {SideBarDropDown(AboutUsDropdown, 2, val2)}
               </SidebarLink>
-              <SidebarLink to="/Board-of-Director" onClick={toggle}>
+              <SidebarLink to="/History-Milestone" onClick={toggle}>
                 {SideBarDropDown(AboutUsDropdown, 3, val2)}
               </SidebarLink>
-              <SidebarLink to="/Organization-Structure" onClick={toggle}>
-                {SideBarDropDown(AboutUsDropdown, 4, val2)}
-              </SidebarLink>
-              <SidebarLink to="/History-Milestone" onClick={toggle}>
-                {SideBarDropDown(AboutUsDropdown, 5, val2)}
-              </SidebarLink>
               <SidebarLink to="/Licenses-Concession" onClick={toggle}>
-                {SideBarDropDown(AboutUsDropdown, 6, val2)}
+                {SideBarDropDown(AboutUsDropdown, 4, val2)}
               </SidebarLink>
             </DropDownContent>
           </DropDown>

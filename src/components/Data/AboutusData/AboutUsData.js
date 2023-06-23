@@ -15,16 +15,6 @@ export const AboutUsIntl = [
     ch: "公司子公司",
   },
   {
-    en: "Leadership",
-    id: "Kepemimpinan",
-    ch: "领导",
-  },
-  {
-    en: "Organizational Structure",
-    id: "Struktur Organisasi",
-    ch: "组织架构",
-  },
-  {
     en: "History and Milestones",
     id: "Sejarah dan Tonggak Sejarah",
     ch: "历史和里程碑",

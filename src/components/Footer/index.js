@@ -156,12 +156,6 @@ const Footer = () => {
               <FooterLink to="/Subsidiary">
                 {FooterData(AboutUsDropdown, 2, footerLang)}
               </FooterLink>
-              <FooterLink to="/Board-of-Director">
-                {FooterData(AboutUsDropdown, 3, footerLang)}
-              </FooterLink>
-              <FooterLink to="/Organization-Structure">
-                {FooterData(AboutUsDropdown, 4, footerLang)}
-              </FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>
